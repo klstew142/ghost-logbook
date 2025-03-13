@@ -1,0 +1,267 @@
+/* --- General Styling --- */
+body {
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Ensure legible font across devices */
+}
+
+html, body {
+    overflow: visible;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    margin: 20px 0;
+    color: #f7ff3c;
+    text-shadow: 2px 2px 5px #000;
+    font-size: 2rem; /* Base font size for mobile */
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem; /* Larger font for desktops */
+    }
+}
+
+/* --- Main Container Styling --- */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Side-by-side layout for larger screens */
+        justify-content: space-between;
+    }
+}
+
+/* --- Form Styling --- */
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%; /* Ensures it fits mobile screens */
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    padding: 10px;
+    font-weight: bold;
+    color: #4a4a4a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+input, textarea, select {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #d4c29c;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #f7ff3c;
+    outline: none;
+    box-shadow: 0 0 5px #f7ff3c;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* --- Button Styling --- */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+button.delete {
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+
+button.delete:hover {
+    background-color: #c0392b;
+}
+
+.back-button {
+    display: inline-block; /* Ensures button alignment with surrounding text */
+    margin-bottom: 15px; /* Adds space below the button */
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}
+
+
+
+/* --- Saved Sightings Section --- */
+.saved-sightings-container {
+    background-color: rgba(50, 50, 50, 0.9); /* Slightly darker for better readability */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; /* Centers and adds space above and below */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Responsive for smaller screens */
+    text-align: center; /* Centers the text inside */
+}
+
+.saved-sightings-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px; /* Adds space below the heading */
+    color: #f7ff3c;
+    text-shadow: 0 0 5px #000, 0 0 10px #f7ff3c;
+}
+
+
+ul {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between list items */
+}
+
+@media (min-width: 768px) {
+    ul {
+        flex-direction: row; /* Makes list horizontal on larger screens */
+        flex-wrap: wrap; /* Wraps to next row if needed */
+        gap: 20px; /* Larger spacing between items */
+    }
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px); /* Makes items take up one-third of the container width */
+    max-width: 300px; /* Limits max width for consistency */
+}
+
+.date, .time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    display: block;
+    margin-bottom: 5px;
+}
+
+span {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    color: #4a4a4a;
+}
+
+.empty-message {
+    text-align: center;
+    color: #f7ff3c; /* Ghostly glow color */
+    font-size: 1.2rem;
+    margin: 30px 0; /* Adds space above and below */
+    text-shadow: 0 0 5px #000, 0 0 10px #f7ff3c; /* Adds a spooky glow */
+}
+
+
+/* --- React-Select Dropdown Styling --- */
+.react-select__control {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.ghost-type-dropdown,
+.equipment-used-dropdown {
+    width: 100%;
+}
+
+/* --- Glowing Ghosts --- */
+.fas.fa-ghost {
+    text-shadow: 0 0 5px #f7ff3c, 0 0 10px #f7ff3c, 0 0 20px #f7ff3c;
+    transition: transform 0.2s ease;
+}
+
+.fas.fa-ghost:hover {
+    transform: scale(1.2);
+}
+
+/* --- Responsive Navbar (Optional) --- */
+.navbar button {
+    margin: 0 15px; /* Adds spacing between buttons */
+    padding: 10px 15px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    width: 100%; /* Spans the entire viewport */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds a shadow */
+    backdrop-filter: blur(5px); /* Slight blur effect for modern look */
+}
+
+/* Add margin to the body to account for the fixed navbar height */
+body {
+    margin-top: 60px; /* Match navbar height */
+}
